@@ -30,7 +30,7 @@ public class Inventory {
     }
 
     //<<< Clean Arch / Port Method
-    public static void increaseStock(PaymentCanceled paymentCanceled) {
+    public static void increaseStock(OrderCanceled orderCanceled) {
         //implement business logic here:
 
         /** Example 1:  new item 
@@ -41,7 +41,7 @@ public class Inventory {
 
         /** Example 2:  finding and process
         
-        repository().findById(paymentCanceled.get???()).ifPresent(inventory->{
+        repository().findById(orderCanceled.get???()).ifPresent(inventory->{
             
             inventory // do something
             repository().save(inventory);
@@ -54,7 +54,7 @@ public class Inventory {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void decreaseStock(PaymentApproved paymentApproved) {
+    public static void decreaseStock(OrderPlaced orderPlaced) {
         //implement business logic here:
 
         /** Example 1:  new item 
@@ -65,7 +65,7 @@ public class Inventory {
 
         /** Example 2:  finding and process
         
-        repository().findById(paymentApproved.get???()).ifPresent(inventory->{
+        repository().findById(orderPlaced.get???()).ifPresent(inventory->{
             
             inventory // do something
             repository().save(inventory);
