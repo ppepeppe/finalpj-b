@@ -25,23 +25,6 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='OrderCanceled'"
-    )
-    public void wheneverOrderCanceled_PaymentCancellationRequest(
-        @Payload OrderCanceled orderCanceled
-    ) {
-        OrderCanceled event = orderCanceled;
-        System.out.println(
-            "\n\n##### listener PaymentCancellationRequest : " +
-            orderCanceled +
-            "\n\n"
-        );
-        // Sample Logic //
-
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='OrderPlaced'"
     )
     public void wheneverOrderPlaced_PaymentRequest(

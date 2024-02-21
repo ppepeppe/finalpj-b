@@ -25,14 +25,14 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='PaymentCanceled'"
+        condition = "headers['type']=='OrderCanceled'"
     )
-    public void wheneverPaymentCanceled_IncreaseStock(
-        @Payload PaymentCanceled paymentCanceled
+    public void wheneverOrderCanceled_IncreaseStock(
+        @Payload OrderCanceled orderCanceled
     ) {
-        PaymentCanceled event = paymentCanceled;
+        OrderCanceled event = orderCanceled;
         System.out.println(
-            "\n\n##### listener IncreaseStock : " + paymentCanceled + "\n\n"
+            "\n\n##### listener IncreaseStock : " + orderCanceled + "\n\n"
         );
 
         // Sample Logic //
@@ -41,14 +41,14 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='PaymentApproved'"
+        condition = "headers['type']=='OrderPlaced'"
     )
-    public void wheneverPaymentApproved_DecreaseStock(
-        @Payload PaymentApproved paymentApproved
+    public void wheneverOrderPlaced_DecreaseStock(
+        @Payload OrderPlaced orderPlaced
     ) {
-        PaymentApproved event = paymentApproved;
+        OrderPlaced event = orderPlaced;
         System.out.println(
-            "\n\n##### listener DecreaseStock : " + paymentApproved + "\n\n"
+            "\n\n##### listener DecreaseStock : " + orderPlaced + "\n\n"
         );
 
         // Sample Logic //
