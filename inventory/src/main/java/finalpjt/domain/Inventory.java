@@ -33,22 +33,14 @@ public class Inventory {
     public static void increaseStock(OrderCanceled orderCanceled) {
         //implement business logic here:
 
-        /** Example 1:  new item 
-        Inventory inventory = new Inventory();
-        repository().save(inventory);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCanceled.get???()).ifPresent(inventory->{
+        System.out.println(orderCanceled.getProductId());
+        repository().findById(Long.valueOf(orderCanceled.getProductId())).ifPresent(inventory->{
             
-            inventory // do something
+            inventory.setStock(inventory.getStock() + orderCanceled.getQty()); // do something
             repository().save(inventory);
 
 
          });
-        */
 
     }
 
@@ -56,23 +48,14 @@ public class Inventory {
     //<<< Clean Arch / Port Method
     public static void decreaseStock(OrderPlaced orderPlaced) {
         //implement business logic here:
-
-        /** Example 1:  new item 
-        Inventory inventory = new Inventory();
-        repository().save(inventory);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderPlaced.get???()).ifPresent(inventory->{
+        System.out.println(orderPlaced.getProductId());
+        repository().findById(Long.valueOf(orderPlaced.getProductId())).ifPresent(inventory->{
             
-            inventory // do something
+            inventory.setStock(inventory.getStock() - orderPlaced.getQty()); // do something
             repository().save(inventory);
 
 
          });
-        */
 
     }
     //>>> Clean Arch / Port Method
