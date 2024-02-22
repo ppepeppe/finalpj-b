@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: order
-          image: username/order:latest
+          image: byunseongdo/order:0222
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: inventory
-          image: username/inventory:latest
+          image: byunseongdo/inventory:0222
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
         - name: payment
-          image: username/payment:latest
+          image: byunseongdo/payment:0222
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -138,7 +138,7 @@ spec:
     spec:
       containers:
         - name: delivery
-          image: username/delivery:latest
+          image: byunseongdo/delivery:0222
           ports:
             - containerPort: 8080
           readinessProbe:
